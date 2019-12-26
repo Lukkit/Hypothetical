@@ -5,6 +5,7 @@
 --
 
 -- 'config' is a global variable that gets injected when 'config.lua' is executed
+-- Or maybe we 'require("lukkit/config"); I'm not sure, up for debate. I'd prefer a global
 
 --
 -- Plugin config
