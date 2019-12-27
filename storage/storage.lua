@@ -30,7 +30,8 @@ local obj = storage.loadOrExport("path/to/somefile", "path/to/internal/file", {"
 obj:set("path.to.value", someObject); 
 
 -- All following functions are identical spec wise to the function above, but only take a specific type
-obj:setArray("path.to.array", {"some", "array", "of things"});
+obj:setObject("path.to.object", {"someKey": "someValue"});  -- object may be empty; depends on the implementation
+obj:setArray("path.to.array", {"some", "array", "of things"});  -- array may be empty; depends on the implementation
 obj:setString("path.to.string", "stringValue");
 obj:setNumber("path.to.number", 0);  -- implemented as doubles, but an int looks like an int
 obj:setBoolean("path.to.boolean", true);
@@ -46,6 +47,7 @@ obj:setBoolean("path.to.boolean", true);
 obj:get("path.to.value");
 
 -- All following functions are identical spec wise to the function above, but only take a specific type
+obj:getObject("path.to.value");
 obj:getArray("path.to.value");
 obj:getString("path.to.value");
 obj:getNumber("path.to.value");
@@ -53,6 +55,7 @@ obj:getBoolean("path.to.value");
 
 -- These methods are the same as the above but return the given value when they would've returned an error
 -- Note that the default value's type doesn't have to be the same as the method returns!
+obj:getObjectDefault("path.to.value", "someDefaultValue");
 obj:getDefault("path.to.value", "someDefaultValue");
 obj:getArrayDefault("path.to.value", "someDefaultValue");
 obj:getStringDefault("path.to.value", "someDefaultValue");
