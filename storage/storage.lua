@@ -11,6 +11,7 @@ local storage = require("lukkit/storage");
 -- Parameters:
 -- 	string filePath - the path to the file relative to the plugin's directory
 -- 	table options   - a table of options which change the default behvaviour. See file_options.lua
+-- 	storage.error error - the error if one is present
 -- Errors: UNKNOWN_EXTENSION, FILE_MISSING, FILE_INVALID. See errors.lua
 -- The extension is the key to what implementation the storage api uses. v3 requires JSON & YAML
 local obj = storage.load("path/to/file.json");
@@ -26,6 +27,7 @@ local obj = storage.loadOrExport("path/to/somefile", "path/to/internal/file", {"
 -- Parameters:
 -- 	string path  - the path through the file where the value will be stored
 -- 	any value - the value to store
+-- 	storage.error error - the error if one is present
 -- Errors: UNTRACABLE_PATH
 obj:set("path.to.value", someObject); 
 
@@ -42,7 +44,7 @@ obj:setBoolean("path.to.boolean", true);
 -- 	string path - the path the value is to be fetched from
 -- Returns:
 -- 	any value   - the value found
--- 	Error error - the error if one is present
+-- 	storage.error error - the error if one is present
 -- Errors: UNTRACABLE_PATH
 obj:get("path.to.value");
 
