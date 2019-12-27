@@ -41,20 +41,20 @@ config.depends = {  -- default: nil
 
 
 --
--- Feature switches
+-- Module switches
 -- 
 --
--- Some features are disabled by default as they are intensive or may be experimental
--- See the documentation for clarification on disable by default modules
--- You may also wish to turn some features off for whatever reason
+-- Some modules are disabled by default as they are intensive or may be experimental
+-- See the documentation for clarification on moduels that are disabled by default as they may change
+-- You may also wish to turn some modules off for whatever reason
 --
 
 
 -- Turns the feature on or off
-config.feature.storage = true
-config.feature.http = true
-config.feature.io = true
-config.feature.logging = true
-config.feature.database = false
-
+config.module.storage = true
+config.module.http = true
+config.module.io = true
+config.module.logging = true
+config.module.database = false
+config.module.debug = false
 
