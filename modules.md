@@ -9,6 +9,6 @@ Note that modules will be imported by Lua's "require" function using the string 
  - IO (for IO relating to Lukkit plugin packages etc.)
  - Debug
  - Storage
- - Chat Component API??? (pls explain)
+ - Chat Component API
  - Database
 
